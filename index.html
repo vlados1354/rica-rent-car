@@ -1987,8 +1987,8 @@ function sendHeroForm(){
   const msg=lang==='es'
     ?`Hola Rica Car Rental! 👋\n\nNombre: ${name}\nTeléfono: ${fullPhone}\nCategoría: ${cat}\nFecha recogida: ${pickup}\nFecha devolución: ${dropoff}\n\n¿Tienen disponibilidad?`
     :`Hi Rica Car Rental! 👋\n\nName: ${name}\nPhone: ${fullPhone}\nCategory: ${cat}\nPick-up: ${pickup}\nDrop-off: ${dropoff}\n\nDo you have availability?`;
-    window.dataLayer = window.dataLayer || [];
-dataLayer.push({event: 'hero_form_submit'});
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({event: 'hero_form_submit'});
   window.open('https://wa.me/18493436895?text='+encodeURIComponent(msg),'_blank');
 }
 
@@ -2256,6 +2256,8 @@ function renderSummary(){
 }
 
 function payDeposit(){
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({event: 'paypal_deposit_click'});
   window.open('https://www.paypal.com/ncp/payment/J4QUAUDXW7XPW','_blank');
   closeModal();
 }
@@ -2272,8 +2274,8 @@ function bookWhatsApp(){
   const msg=lang==='es'
     ?`Hola Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Recogida: ${loc}\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} días)\n👤 ${fname}\n📞 ${phone}\n🛡️ Seguro: ${ins}\n➕ Extras: ${extras}\n💰 Total estimado: $${total}\n\n¿Tienen disponibilidad?`
     :`Hi Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Pick-up: ${loc}\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} days)\n👤 ${fname}\n📞 ${phone}\n🛡️ Insurance: ${ins}\n➕ Extras: ${extras}\n💰 Estimated total: $${total}\n\nDo you have availability?`;
-    window.dataLayer = window.dataLayer || [];
-dataLayer.push({event: 'hero_form_submit'});
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({event: 'booking_whatsapp_click'});
   window.open('https://wa.me/18493436895?text='+encodeURIComponent(msg),'_blank');
   closeModal();
 }
