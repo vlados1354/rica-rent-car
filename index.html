@@ -2288,6 +2288,8 @@ function showThanks(){
   document.getElementById('ty-sub').textContent=t.tySub;
   document.getElementById('ty-back').textContent=t.tyBack;
   window.scrollTo({top:0,behavior:'smooth'});
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({event: 'purchase_complete'});
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
