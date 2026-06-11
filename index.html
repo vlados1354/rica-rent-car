@@ -1214,7 +1214,10 @@ const T={
 };
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
-let lang='es';
+const _urlLang=window.location.search.includes('lang=en')?'en':null;
+const _browserLang=navigator.language||navigator.userLanguage||'es';
+const _isEnBrowser=_browserLang.toLowerCase().startsWith('en')||_browserLang.toLowerCase().startsWith('fr');
+let lang=_urlLang||(_isEnBrowser?'en':'es');
 let fleetFilter='all';
 let curStep=0;
 let selCar=null;
@@ -2405,6 +2408,8 @@ function init(){
   document.getElementById('hf-dropoff').value=fmt(t3);
   document.getElementById('hf-dropoff').min=fmt(t);
   renderAll();
+  // Apply auto-detected language
+  setLang(lang);
 }
 
 init();
