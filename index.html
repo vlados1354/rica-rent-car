@@ -721,6 +721,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+
+  <!-- SEO Block -->
+  <section class="sec" style="background:#0a0a0a;padding:60px 20px">
+    <div style="max-width:900px;margin:0 auto;color:#aaa;font-size:15px;line-height:1.8">
+      <h2 style="color:#fff;font-size:24px;margin-bottom:16px">Alquiler de Autos en Punta Cana – Car Rental Punta Cana</h2>
+      <p style="margin-bottom:16px">Rica Car Rental es su mejor opción para el <strong style="color:#e0a800">alquiler de autos en Punta Cana</strong>, Bávaro y toda la República Dominicana. Ofrecemos vehículos económicos, sedanes y SUVs desde $40/día con seguro incluido y entrega en el aeropuerto o su hotel.</p>
+      <p style="margin-bottom:16px">Looking for <strong style="color:#e0a800">car rental in Punta Cana</strong>? Rica Car Rental offers the best rates for <strong style="color:#e0a800">rent a car Punta Cana</strong> with insurance included, airport delivery, and 24/7 WhatsApp support. We serve Punta Cana Airport (PUJ), Bávaro, Cap Cana, and all Dominican Republic.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:32px">
+        <div>
+          <h3 style="color:#e0a800;font-size:16px;margin-bottom:8px">🚗 Alquiler de Autos Punta Cana</h3>
+          <p>Más de 20 vehículos disponibles. Económicos desde $40/día, SUV desde $55/día. Sin límite de kilómetros. Seguro todo riesgo incluido.</p>
+        </div>
+        <div>
+          <h3 style="color:#e0a800;font-size:16px;margin-bottom:8px">✈️ Entrega en Aeropuerto PUJ</h3>
+          <p>Recibe tu auto directamente en el Aeropuerto Internacional de Punta Cana. Car rental Punta Cana airport – fast and easy pickup, no waiting in line.</p>
+        </div>
+        <div>
+          <h3 style="color:#e0a800;font-size:16px;margin-bottom:8px">🏨 Entrega en Hotel / Hotel Delivery</h3>
+          <p>Entregamos en cualquier hotel de Bávaro, Cap Cana y Punta Cana. Free delivery to your resort – rent a car Dominican Republic hassle-free.</p>
+        </div>
+        <div>
+          <h3 style="color:#e0a800;font-size:16px;margin-bottom:8px">💰 Precios Transparentes</h3>
+          <p>Sin cargos ocultos. Alquiler de coches Punta Cana con precio fijo. No hidden fees – what you see is what you pay for your Dominican Republic car rental.</p>
+        </div>
+      </div>
+      <div style="margin-top:32px;padding:24px;background:#111;border-radius:12px;border-left:4px solid #e0a800">
+        <h3 style="color:#fff;font-size:18px;margin-bottom:12px">¿Por qué elegir Rica Car Rental?</h3>
+        <ul style="list-style:none;padding:0;display:grid;gap:8px">
+          <li>✅ <strong style="color:#fff">Seguro incluido</strong> – Insurance included in every rental</li>
+          <li>✅ <strong style="color:#fff">Sin límite de km</strong> – Unlimited mileage in Dominican Republic</li>
+          <li>✅ <strong style="color:#fff">Autos nuevos 2020–2024</strong> – New cars, best condition</li>
+          <li>✅ <strong style="color:#fff">Soporte 24/7 WhatsApp</strong> – 24/7 WhatsApp support in English & Spanish</li>
+          <li>✅ <strong style="color:#fff">Entrega en aeropuerto y hotel</strong> – Free airport & hotel delivery Punta Cana</li>
+          <li>✅ <strong style="color:#fff">Más de 5 años de experiencia</strong> – Trusted local car rental company</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- ══ FLEET PAGE ══ -->
@@ -1205,7 +1243,22 @@ function showPage(p){
   if(pg){pg.classList.add('active')}
   document.getElementById('mob-menu').classList.remove('open');
   window.scrollTo({top:0,behavior:'smooth'});
+  const urlMap={home:'/',fleet:'/flota',insurance:'/condiciones',blog:'/blog',contact:'/contacto'};
+  const newUrl=urlMap[p]||'/';
+  window.history.pushState({page:p},document.title,newUrl);
+  let canon=document.querySelector('link[rel="canonical"]');
+  if(canon)canon.href='https://rica-rentcar.com'+newUrl;
 }
+window.addEventListener('popstate',function(e){
+  if(e.state&&e.state.page)showPage(e.state.page);
+  else showPage('home');
+});
+(function(){
+  const urlMap={'/flota':'fleet','/condiciones':'insurance','/blog':'blog','/contacto':'contact'};
+  const path=window.location.pathname;
+  const page=urlMap[path];
+  if(page)showPage(page);
+})();
 
 function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open')}
 

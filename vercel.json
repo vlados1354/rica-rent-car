@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/flota", "destination": "/index.html" },
+    { "source": "/condiciones", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/contacto", "destination": "/index.html" },
+    { "source": "/en", "destination": "/index.html" }
+  ]
+}
