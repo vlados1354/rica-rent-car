@@ -2408,8 +2408,8 @@ function init(){
   document.getElementById('hf-dropoff').value=fmt(t3);
   document.getElementById('hf-dropoff').min=fmt(t);
   renderAll();
-  // Apply auto-detected language
-  setLang(lang);
+  // Apply auto-detected language after DOM ready
+  if(lang==='en') setLang('en');
 }
 
 init();
