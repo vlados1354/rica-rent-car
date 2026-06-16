@@ -1,45 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N68LMCS');</script>
-<!-- End Google Tag Manager -->
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-87Z9N14955"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-87Z9N14955');
-</script>
-<!-- End Google Analytics -->
-<!-- Facebook Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '25554816264174257');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=25554816264174257&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel -->
+<!-- dataLayer init only - GTM loads after page paint -->
+<script>window.dataLayer=window.dataLayer||[];</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rica Car Rental – Alquiler de Autos en Punta Cana | Car Rental Punta Cana</title>
 <meta name="description" content="Alquiler de autos en Punta Cana desde $40/día. Seguro incluido, entrega en aeropuerto y hotel. Car rental Punta Cana – economy, SUV, sedans. Book now via WhatsApp."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://rica-rentcar.com/"/>
+<link rel="canonical" href="https://www.rica-rentcar.com/"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -47,7 +16,7 @@ src="https://www.facebook.com/tr?id=25554816264174257&ev=PageView&noscript=1"
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png"/>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://rica-rentcar.com/"/>
+<meta property="og:url" content="https://www.rica-rentcar.com/"/>
 <meta property="og:title" content="Rica Car Rental – Alquiler de Autos en Punta Cana"/>
 <meta property="og:description" content="Alquiler de autos en Punta Cana desde $40/día. Seguro incluido, entrega en aeropuerto. Car rental Punta Cana – book now!"/>
 <meta property="og:image" content="https://rica-rentcar.com/og-image.jpg"/>
@@ -62,9 +31,9 @@ src="https://www.facebook.com/tr?id=25554816264174257&ev=PageView&noscript=1"
   "@context": "https://schema.org",
   "@type": ["CarRental", "LocalBusiness"],
   "name": "Rica Car Rental",
-  "url": "https://rica-rentcar.com",
-  "logo": "https://rica-rentcar.com/logo.png",
-  "image": "https://rica-rentcar.com/og-image.jpg",
+  "url": "https://www.rica-rentcar.com",
+  "logo": "https://www.rica-rentcar.com/logo.png",
+  "image": "https://www.rica-rentcar.com/og-image.jpg",
   "description": "Alquiler de autos en Punta Cana, Bávaro y República Dominicana. Car rental Punta Cana from $40/day. Insurance included, airport delivery.",
   "telephone": "+18493436895",
   "address": {
@@ -93,7 +62,9 @@ src="https://www.facebook.com/tr?id=25554816264174257&ev=PageView&noscript=1"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lora:ital,wght@0,400;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -2419,5 +2390,32 @@ function init(){
 
 init();
 </script>
+
+<!-- Deferred tracking: loads after page is interactive -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  // GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N68LMCS');
+  // GA4
+  var ga=document.createElement('script');ga.async=true;
+  ga.src='https://www.googletagmanager.com/gtag/js?id=G-87Z9N14955';
+  document.head.appendChild(ga);
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-87Z9N14955');
+  // Facebook Pixel
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','25554816264174257');fbq('track','PageView');
+});
+</script>
+<!-- GTM noscript fallback -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N68LMCS" height="1" width="1" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
