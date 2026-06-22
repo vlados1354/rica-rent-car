@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    { "source": "/flota", "destination": "/index.html" },
-    { "source": "/condiciones", "destination": "/index.html" },
-    { "source": "/blog", "destination": "/index.html" },
-    { "source": "/contacto", "destination": "/index.html" },
-    { "source": "/en", "destination": "/index.html" }
+    { "source": "/flota", "destination": "/flota.html" },
+    { "source": "/condiciones", "destination": "/condiciones.html" },
+    { "source": "/contacto", "destination": "/contacto.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/en", "destination": "/en.html" }
   ]
 }
