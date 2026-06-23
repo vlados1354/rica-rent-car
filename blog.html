@@ -11,6 +11,7 @@
   <meta property="og:url" content="https://www.rica-rentcar.com/blog"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://www.rica-rentcar.com/og-image.jpg"/>
+  <link rel="alternate" hreflang="es" href="https://www.rica-rentcar.com/blog"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lora:ital,wght@0,400;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -54,16 +55,19 @@
     .breadcrumb a{color:#888;text-decoration:none;}
     .breadcrumb a:hover{color:var(--gold);}
     .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:0 24px 60px;}
-    .blog-card{background:var(--card);border:1px solid rgba(212,168,67,.12);border-radius:var(--radius);overflow:hidden;transition:.2s;display:flex;flex-direction:column;}
+    .blog-card{background:var(--card);border:1px solid rgba(212,168,67,.12);border-radius:var(--radius);overflow:hidden;transition:.2s;display:flex;flex-direction:column;text-decoration:none;}
     .blog-card:hover{border-color:var(--gold);transform:translateY(-3px);}
-    .card-img{width:100%;height:200px;object-fit:cover;display:block;}
     .card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
     .card-cat{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
-    .card-title{font-size:17px;font-weight:700;margin-bottom:10px;line-height:1.4;}
-    .card-desc{color:#aaa;font-size:13px;line-height:1.6;margin-bottom:16px;flex:1;}
-    .card-link{color:var(--gold);font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
-    .card-link:hover{gap:8px;}
-    .cta-bar{background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.15);border-radius:var(--radius);padding:32px;text-align:center;max-width:700px;margin:0 auto 60px;padding-left:24px;padding-right:24px;}
+    .card-title{font-size:17px;font-weight:700;margin-bottom:10px;line-height:1.4;color:#fff;}
+    .card-desc{color:#aaa;font-size:13px;line-height:1.6;margin-bottom:16px;flex:1;font-family:'Lora',serif;}
+    .card-link{color:var(--gold);font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:4px;}
+    .excursiones-cta{background:linear-gradient(135deg,rgba(212,168,67,.08),rgba(212,168,67,.03));border:1px solid rgba(212,168,67,.3);border-radius:var(--radius);padding:32px;margin:0 24px 48px;text-align:center;max-width:1200px;margin-left:auto;margin-right:auto;}
+    .excursiones-cta h3{font-size:20px;font-weight:700;margin-bottom:10px;}
+    .excursiones-cta p{color:#aaa;font-size:14px;line-height:1.7;max-width:580px;margin:0 auto 20px;font-family:'Lora',serif;}
+    .btn-exc{display:inline-block;padding:13px 28px;background:var(--gold);color:#000;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;}
+    .btn-exc:hover{background:#c49a30;}
+    .cta-bar{background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.15);border-radius:var(--radius);padding:32px;text-align:center;max-width:700px;margin:0 auto 60px;}
     .cta-bar h2{font-size:20px;font-weight:700;margin-bottom:8px;}
     .cta-bar p{color:#aaa;font-size:14px;margin-bottom:20px;}
     .btn-wa{display:inline-block;padding:13px 28px;background:var(--gold);color:#000;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;}
@@ -96,81 +100,118 @@
 
   <div class="blog-grid">
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/mejores-lugares-punta-cana-en-auto" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/mejores-lugares-punta-cana-en-auto"/>
+      <img src="/img/montana-redonda-punta-cana-en-auto.jpg"
+           alt="7 mejores lugares para visitar desde Punta Cana en auto – Montaña Redonda vista panorámica"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🗺️ Destinos</div>
         <h2 class="card-title" itemprop="headline">7 Mejores Lugares Para Visitar Desde Punta Cana en Auto</h2>
-        <p class="card-desc" itemprop="description">Más allá de los resorts hay un país increíble. Montaña Redonda, Playa Macao, Cap Cana, Miches y más destinos que puedes explorar en auto desde Punta Cana.</p>
-        <a href="/blog/mejores-lugares-punta-cana-en-auto" class="card-link" itemprop="url">Leer más →</a>
+        <p class="card-desc" itemprop="description">Más allá de los resorts hay un país increíble. Montaña Redonda, Playa Macao, Cap Cana, Miches, Bayahibe, Altos de Chavón y más destinos que puedes explorar en auto desde Punta Cana.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/restaurantes-vida-nocturna-punta-cana" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/restaurantes-vida-nocturna-punta-cana"/>
+      <img src="/img/jellyfish-restaurante-punta-cana.jpg"
+           alt="Mejores restaurantes Punta Cana – Jellyfish Restaurant terraza sobre la playa"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🍽️ Restaurantes & Vida Nocturna</div>
         <h2 class="card-title" itemprop="headline">Mejores Restaurantes y Vida Nocturna en Punta Cana</h2>
-        <p class="card-desc" itemprop="description">Los mejores restaurantes fuera del resort: Noah, La Yola, Jellyfish. Más la guía de vida nocturna: Coco Bongo, Imagine y Hard Rock Casino.</p>
-        <a href="/blog/restaurantes-vida-nocturna-punta-cana" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">Los mejores restaurantes fuera del resort: Jellyfish, La Yola, Noah, Yeya. Más la guía de vida nocturna: Coco Bongo, Imagine Club, Hard Rock Casino.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/santo-domingo-en-auto-desde-punta-cana" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/santo-domingo-en-auto-desde-punta-cana"/>
+      <img src="/img/santo-domingo-zona-colonial-calle-el-conde.jpg"
+           alt="Santo Domingo excursión desde Punta Cana – Calle El Conde Zona Colonial"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🏙️ Guía de Ciudad</div>
         <h2 class="card-title" itemprop="headline">Cómo Visitar Santo Domingo en Auto: Excursión de un Día Desde Punta Cana</h2>
-        <p class="card-desc" itemprop="description">La ciudad más antigua de América te espera a 2.5 horas. Zona Colonial, Catedral Primada, Alcázar de Colón y consejos prácticos para explorarla en auto.</p>
-        <a href="/blog/santo-domingo-en-auto-desde-punta-cana" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">La ciudad más antigua de América te espera a 2.5 horas. Zona Colonial, Alcázar de Colón, Catedral Primada, Fortaleza Ozama y consejos prácticos para explorarla por tu cuenta.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/peninsula-samana-naturaleza-republica-dominicana" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/peninsula-samana-naturaleza-republica-dominicana"/>
+      <img src="/img/cayo-levantado-samana-republica-dominicana.jpg"
+           alt="Península de Samaná República Dominicana – Cayo Levantado con agua turquesa"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🌿 Naturaleza</div>
         <h2 class="card-title" itemprop="headline">Península de Samaná: La Naturaleza Más Hermosa de República Dominicana</h2>
-        <p class="card-desc" itemprop="description">Montañas, cascadas, playas vírgenes y ballenas jorobadas. Cascada El Limón, Playa Rincón, Cayo Levantado y Los Haitises en auto desde Punta Cana.</p>
-        <a href="/blog/peninsula-samana-naturaleza-republica-dominicana" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">Cascada El Limón, Playa Rincón, Cayo Levantado, Los Haitises y avistamiento de ballenas jorobadas. La guía completa de Samaná desde Punta Cana en auto.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/puerto-plata-guia-costa-norte" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/puerto-plata-guia-costa-norte"/>
+      <img src="/img/puerto-plata-atardecer-playa-costa-norte.jpg"
+           alt="Puerto Plata costa norte República Dominicana – atardecer en la playa con palmeras"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🌊 Costa Norte</div>
         <h2 class="card-title" itemprop="headline">Puerto Plata: Guía de Viaje por la Costa Norte</h2>
-        <p class="card-desc" itemprop="description">Monte Isabel de Torres, Fortaleza San Felipe, Cabarete surf y Playa Dorada. La costa norte de República Dominicana en auto desde Punta Cana.</p>
-        <a href="/blog/puerto-plata-guia-costa-norte" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">Monte Isabel de Torres, Fortaleza San Felipe, Cabarete surf, Sosúa, Cayo Arena y Playa Dorada. Todo lo que ver en la costa norte desde Punta Cana en auto.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/guia-completa-road-trip-republica-dominicana" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/guia-completa-road-trip-republica-dominicana"/>
+      <img src="/img/playa-dominicus-bayahibe-faro-dominicana.jpg"
+           alt="Road trip República Dominicana – Playa Dominicus Bayahibe con faro blanco y negro"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">🚗 Road Trip</div>
         <h2 class="card-title" itemprop="headline">Guía Completa de Road Trip por República Dominicana</h2>
-        <p class="card-desc" itemprop="description">La guía definitiva para explorar la isla en auto desde Punta Cana. Rutas, destinos, consejos de conducción y lo mejor de cada región del país.</p>
-        <a href="/blog/guia-completa-road-trip-republica-dominicana" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">La guía definitiva para explorar la isla en auto desde Punta Cana. Rutas, distancias, destinos imprescindibles y consejos prácticos para conducir en República Dominicana.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
-    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+    <a href="/blog/mejor-epoca-visitar-republica-dominicana" class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
       <meta itemprop="url" content="https://www.rica-rentcar.com/blog/mejor-epoca-visitar-republica-dominicana"/>
+      <img src="/img/punta-cana-playa-mejor-epoca-temporada-seca.jpg"
+           alt="Mejor época para visitar Punta Cana – playa con agua turquesa en temporada seca"
+           style="width:100%;height:200px;object-fit:cover;display:block;"
+           loading="lazy" width="320" height="200"/>
       <div class="card-body">
         <div class="card-cat">☀️ Consejos de Viaje</div>
         <h2 class="card-title" itemprop="headline">Mejor Época Para Visitar República Dominicana: Clima, Temporadas y Consejos</h2>
-        <p class="card-desc" itemprop="description">¿Cuándo es el mejor momento para visitar Punta Cana? Guía de clima por temporada, temporada de huracanes, sargazo y mejores meses para cada viajero.</p>
-        <a href="/blog/mejor-epoca-visitar-republica-dominicana" class="card-link">Leer más →</a>
+        <p class="card-desc" itemprop="description">¿Cuándo ir a Punta Cana? Guía completa de clima por mes: temporada alta y baja, huracanes, sargazo, ballenas y los mejores meses para cada tipo de viajero.</p>
+        <span class="card-link">Leer más →</span>
       </div>
-    </article>
+    </a>
 
   </div>
 
-  <div class="cta-bar" style="margin-left:auto;margin-right:auto;padding:32px 24px;">
+  <div class="excursiones-cta" style="margin:0 24px 48px;max-width:1152px;margin-left:auto;margin-right:auto;">
+    <div style="font-size:28px;margin-bottom:12px;">🌴</div>
+    <h3>¿Quieres explorar República Dominicana sin preocuparte de organizar nada?</h3>
+    <p>Además del alquiler de autos, en Rica Travel organizamos excursiones y tours por toda la isla: Isla Saona, Santo Domingo, Samaná, Buggy en Playa Macao, snorkel, delfines y mucho más. Todo con guías profesionales y salida diaria desde Punta Cana.</p>
+    <a href="https://ricatravel.online/" target="_blank" rel="noopener" class="btn-exc">
+      🗺️ Ver todas las excursiones en ricatravel.online
+    </a>
+  </div>
+
+  <div class="cta-bar" style="padding-left:24px;padding-right:24px;">
     <h2>¿Listo para explorar República Dominicana?</h2>
-    <p>Alquila tu auto en Punta Cana desde $40/día y descubre el país a tu ritmo. Entrega en aeropuerto y hoteles.</p>
+    <p>Alquila tu auto en Punta Cana desde $40/día con km ilimitados, seguro incluido y entrega en aeropuerto y hoteles.</p>
     <a href="https://wa.me/18493436895?text=Hola,%20quiero%20alquilar%20un%20auto%20para%20explorar%20la%20isla" class="btn-wa">
       📱 Reservar por WhatsApp
     </a>
