@@ -1965,48 +1965,26 @@ function renderBlog(){
 
 function openArticle(i){
   const article=BLOG_ARTICLES[lang][i];
-  currentArticle=i;
-  // Remove existing overlay if any
+  if(!article) return;
+  const slug=article.slug;
+  const urlMap={
+    'mejores-lugares-punta-cana-en-auto':'/blog/mejores-lugares-punta-cana-en-auto',
+    'restaurantes-vida-nocturna-punta-cana':'/blog/restaurantes-vida-nocturna-punta-cana',
+    'santo-domingo-en-auto-desde-punta-cana':'/blog/santo-domingo-en-auto-desde-punta-cana',
+    'peninsula-samana-naturaleza-republica-dominicana':'/blog/peninsula-samana-naturaleza-republica-dominicana',
+    'puerto-plata-guia-costa-norte':'/blog/puerto-plata-guia-costa-norte',
+    'guia-completa-road-trip-republica-dominicana':'/blog/guia-completa-road-trip-republica-dominicana',
+    'mejor-epoca-visitar-republica-dominicana':'/blog/mejor-epoca-visitar-republica-dominicana'
+  };
+  if(urlMap[slug]){
+    window.location.href=urlMap[slug];
+    return;
+  }
+  // Fallback: original overlay behavior for unmapped articles
   const existing=document.getElementById('article-overlay');
   if(existing)existing.remove();
-  const overlay=document.createElement('div');
-  overlay.id='article-overlay';
-  overlay.style.cssText='position:fixed;inset:0;z-index:400;background:#0d0d0d;overflow-y:auto;padding:24px 16px';
-  const backTxt=lang==='es'?'← Volver':'← Back';
-  overlay.innerHTML=`
-    <div style="max-width:700px;margin:0 auto">
-      <button id="art-back-btn" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);padding:10px 20px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;margin-bottom:24px;font-family:Montserrat,sans-serif">${backTxt}</button>
-      <div id="article-content"></div>
-    </div>`;
-  document.body.appendChild(overlay);
-  document.getElementById('art-back-btn').addEventListener('click',()=>overlay.remove());
-
-  document.getElementById('article-content').innerHTML=`
-    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px">${article.cat}</div>
-    <h1 style="font-size:clamp(22px,5vw,34px);font-weight:900;line-height:1.2;margin-bottom:16px;font-family:Montserrat,sans-serif">${article.t}</h1>
-    <meta name="description" content="${article.desc||article.ex}"/>
-    <img src="${article.img}" alt="${article.t}" style="width:100%;height:260px;object-fit:cover;border-radius:8px;margin-bottom:28px;filter:brightness(.85)" onerror="this.style.display='none'" loading="lazy"/>
-    <div style="font-size:14px;line-height:1.9;color:rgba(245,241,235,.85);font-family:Lora,serif" class="article-body">${article.content}</div>
-    <div style="margin-top:40px;padding:24px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.2);border-radius:8px;text-align:center">
-      <div style="font-size:18px;font-weight:800;margin-bottom:8px;font-family:Montserrat,sans-serif">${lang==='es'?'¿Listo para explorar?':'Ready to explore?'}</div>
-      <div style="font-size:13px;color:var(--gray2);margin-bottom:16px;font-family:Lora,serif">${lang==='es'?'Alquila tu auto desde $40/día con seguro incluido.':'Rent your car from $40/day with insurance included.'}</div>
-      <button id="art-fleet-btn" style="background:var(--gold);color:#000;padding:12px 28px;border-radius:4px;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:none;font-family:Montserrat,sans-serif">${lang==='es'?'Ver Flota':'View Fleet'}</button>
-    </div>`;
-
-  document.getElementById('art-fleet-btn').addEventListener('click',()=>{overlay.remove();showPage('fleet')});
-
-  // Article body styles
-  const style=document.createElement('style');
-  style.textContent=`
-    .article-body h2{color:var(--gold);font-size:18px;font-weight:800;margin:24px 0 10px;font-family:Montserrat,sans-serif;line-height:1.3}
-    .article-body h3{color:var(--gold2);font-size:15px;font-weight:700;margin:18px 0 8px;font-family:Montserrat,sans-serif}
-    .article-body p{margin-bottom:14px}
-    .article-body strong{color:var(--white);font-weight:700}
-    .article-body img{border-radius:8px}
-  `;
-  overlay.appendChild(style);
-  overlay.scrollTop=0;
 }
+
 
 function renderContact(){
   const t=T[lang];
