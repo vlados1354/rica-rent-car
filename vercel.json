@@ -1,9 +1,16 @@
 {
   "rewrites": [
-    { "source": "/flota", "destination": "/flota.html" },
-    { "source": "/condiciones", "destination": "/condiciones.html" },
-    { "source": "/contacto", "destination": "/contacto.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/en", "destination": "/en.html" }
+    { "source": "/flota", "destination": "/index.html" },
+    { "source": "/condiciones", "destination": "/index.html" },
+    { "source": "/contacto", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/en", "destination": "/index.html" },
+    { "source": "/blog/mejores-lugares-punta-cana-en-auto", "destination": "/mejores-lugares-punta-cana-en-auto.html" },
+    { "source": "/blog/restaurantes-vida-nocturna-punta-cana", "destination": "/restaurantes-vida-nocturna-punta-cana.html" },
+    { "source": "/blog/santo-domingo-en-auto-desde-punta-cana", "destination": "/santo-domingo-en-auto-desde-punta-cana.html" },
+    { "source": "/blog/peninsula-samana-naturaleza-republica-dominicana", "destination": "/peninsula-samana-naturaleza-republica-dominicana.html" },
+    { "source": "/blog/puerto-plata-guia-costa-norte", "destination": "/puerto-plata-guia-costa-norte.html" },
+    { "source": "/blog/guia-completa-road-trip-republica-dominicana", "destination": "/guia-completa-road-trip-republica-dominicana.html" },
+    { "source": "/blog/mejor-epoca-visitar-republica-dominicana", "destination": "/mejor-epoca-visitar-republica-dominicana.html" }
   ]
 }
