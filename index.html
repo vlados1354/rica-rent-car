@@ -1344,6 +1344,37 @@ function renderAll(){
   renderContact();
   renderFleetPage();
   renderInsurancePage();
+  updateMetaTags();
+}
+
+// ── SEO META (bilingual) ─────────────────────────────────────────────────────
+const META={
+  es:{
+    title:"Rica Car Rental – Alquiler de Autos en Punta Cana | Car Rental Punta Cana",
+    desc:"Alquiler de autos en Punta Cana desde $40/día. Seguro incluido, entrega en aeropuerto y hotel. Car rental Punta Cana – economy, SUV, sedans. Reserva ahora por WhatsApp.",
+    ogTitle:"Rica Car Rental – Alquiler de Autos en Punta Cana",
+    ogDesc:"Alquiler de autos en Punta Cana desde $40/día. Seguro incluido, entrega en aeropuerto. Car rental Punta Cana – ¡reserva ahora!",
+    locale:"es_DO"
+  },
+  en:{
+    title:"Rica Car Rental – Car Rental Punta Cana | Punta Cana Airport Car Rental",
+    desc:"Car rental in Punta Cana from $40/day. Insurance included, airport & hotel delivery. Economy, SUV, sedans & minivans. Book now via WhatsApp — response in 15 minutes.",
+    ogTitle:"Rica Car Rental – Car Rental Punta Cana",
+    ogDesc:"Car rental in Punta Cana from $40/day. Insurance included, airport delivery. Economy, SUV, sedans & minivans — book now!",
+    locale:"en_US"
+  }
+};
+function updateMetaTags(){
+  const m=META[lang];
+  if(!m)return;
+  document.title=m.title;
+  document.documentElement.lang=lang;
+  const setMeta=(sel,attr,val)=>{const el=document.querySelector(sel);if(el)el.setAttribute(attr,val)};
+  setMeta('meta[name="description"]','content',m.desc);
+  setMeta('meta[property="og:title"]','content',m.ogTitle);
+  setMeta('meta[property="og:description"]','content',m.ogDesc);
+  setMeta('meta[property="og:locale"]','content',m.locale);
+  setMeta('meta[property="og:locale:alternate"]','content',lang==='es'?'en_US':'es_DO');
 }
 
 // ── RENDER CARS ───────────────────────────────────────────────────────────────
@@ -1689,6 +1720,105 @@ es:[
     <p>Honestamente, no hay una "mala" temporada para la República Dominicana. La isla se mantiene cálida y tropical todo el año. La diferencia es principalmente: humedad, volumen de turistas, períodos cortos de lluvia y condiciones del océano. Si quieres el clima de postal perfecto, elige el invierno. Si quieres mejores precios y menos turistas, el verano y comienzos del otoño pueden ser excelentes. Con buena planificación, cualquier temporada puede convertirse en unas increíbles vacaciones caribeñas.</p>
   `
 }
+,
+{
+  cat:"Guía de Alquiler",
+  slug:"como-alquilar-auto-punta-cana",
+  t:"Cómo Alquilar un Auto en Punta Cana: Guía Completa",
+  desc:"Todo lo que necesitas saber para alquilar un auto en Punta Cana: requisitos, documentos, seguro, depósito y consejos para elegir el vehículo correcto.",
+  ex:"Requisitos, seguro, depósito y consejos prácticos para alquilar tu auto en Punta Cana sin sorpresas.",
+  icon:"🚗",
+  img:"https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=75",
+  content:`
+    <p>Alquilar un auto en Punta Cana es una de las mejores decisiones que puedes tomar para tu viaje a República Dominicana. Te da la libertad de explorar playas escondidas, pueblos locales y rutas escénicas sin depender de excursiones organizadas o taxis costosos. Pero si es tu primera vez, es normal tener dudas sobre el proceso. Esta guía cubre todo lo que necesitas saber.</p>
+    <img src="https://images.unsplash.com/photo-1600661653561-629509216228?w=700&q=75" alt="Alquiler de autos en Punta Cana requisitos y documentos" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Requisitos y Documentos Necesarios</h2>
+    <p>Para alquilar un auto en Punta Cana normalmente necesitas: licencia de conducir vigente (la de tu país de origen suele ser válida), pasaporte o identificación, una tarjeta de crédito o efectivo para el depósito de seguridad, y tener la edad mínima requerida (generalmente 21 años, aunque algunas categorías premium piden 25). No necesitas un permiso internacional de conducir si tu licencia está en alfabeto latino.</p>
+    <h2>Cómo Funciona el Proceso de Reserva</h2>
+    <p>La mayoría de las rentadoras locales en Punta Cana, incluida Rica Car Rental, trabajan de forma simple y directa por WhatsApp: envías tus fechas de recogida y devolución, eliges la categoría de auto que prefieres (económico, SUV, sedán o minivan), y recibes confirmación en minutos. No hace falta pasar por mostradores largos ni filas del aeropuerto — el auto puede entregarse directamente en tu hotel o resort.</p>
+    <h2>Tipos de Seguro Disponibles</h2>
+    <p>La mayoría de los alquileres incluyen un seguro básico CDW (cobertura de daños por colisión) con una franquicia que varía según la categoría del vehículo. También existe la opción de Full Coverage, que elimina la franquicia y ofrece cobertura total, ideal si planeas manejar largas distancias o fuera de la ciudad. Verifica siempre qué incluye tu contrato antes de firmar.</p>
+    <h2>El Depósito de Seguridad</h2>
+    <p>Casi todas las rentadoras piden un depósito reembolsable (comúnmente entre $200 y $300) que se retiene como garantía y se devuelve al finalizar el alquiler sin daños ni retrasos. Puede pagarse en efectivo o con tarjeta de crédito. Este depósito es independiente del costo diario del alquiler.</p>
+    <h2>Cómo Elegir el Auto Correcto</h2>
+    <p>Si viajas en pareja y te quedarás cerca del resort, un auto económico es suficiente. Si van varias personas o planean explorar carreteras rurales, una SUV ofrece más espacio y mejor manejo. Para grupos grandes o familias, las minivans son la opción más cómoda. Piensa también en el equipaje: los autos económicos tienen espacio limitado en el baúl.</p>
+    <h2>Consejos Finales</h2>
+    <p>Reserva con unos días de anticipación, especialmente en temporada alta (diciembre a abril). Revisa el auto junto con el personal antes de recibirlo y toma fotos de cualquier daño existente. Ten a mano el número de WhatsApp de la rentadora por si necesitas asistencia durante tu viaje. Con esta preparación, alquilar un auto en Punta Cana es rápido, seguro y te abre las puertas a conocer la verdadera República Dominicana.</p>
+  `
+},
+{
+  cat:"Guía del Aeropuerto",
+  slug:"guia-aeropuerto-puj-alquiler-autos",
+  t:"Guía del Aeropuerto de Punta Cana (PUJ): Cómo Alquilar tu Auto al Llegar",
+  desc:"Guía completa del Aeropuerto Internacional de Punta Cana (PUJ): cómo funciona la zona de alquiler de autos, qué hacer al aterrizar y las mejores rutas desde el aeropuerto.",
+  ex:"Todo sobre el aeropuerto PUJ: terminales, alquiler de autos y los primeros pasos al llegar a Punta Cana.",
+  icon:"✈️",
+  img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75",
+  content:`
+    <p>El Aeropuerto Internacional de Punta Cana (PUJ) es uno de los más transitados del Caribe, y para muchos viajeros es el primer contacto con República Dominicana. Entender cómo funciona la zona de alquiler de autos te ahorra tiempo y estrés desde el momento en que aterrizas.</p>
+    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=75" alt="Aeropuerto Internacional de Punta Cana PUJ alquiler de autos" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Cómo Está Organizado el Aeropuerto PUJ</h2>
+    <p>PUJ tiene varias terminales conectadas por pasillos abiertos con techo de palma, un diseño muy característico de Punta Cana. Después de pasar por inmigración y aduana, encontrarás la zona de salida donde te esperan los representantes de las compañías de transporte y alquiler de autos.</p>
+    <h2>Alquiler Dentro del Aeropuerto vs. Entrega Fuera</h2>
+    <p>Existen dos formas principales de alquilar un auto en PUJ: recogerlo directamente en los mostradores dentro del aeropuerto, o coordinar con una rentadora local para que te entregue el vehículo justo a la salida o incluso en tu hotel. La segunda opción, que ofrecen rentadoras como Rica Car Rental, suele ser más económica porque evita las tarifas adicionales que cobran las compañías internacionales por operar dentro de la terminal.</p>
+    <h2>Qué Hacer al Aterrizar</h2>
+    <p>Una vez que sales de la zona de equipaje, ten tu confirmación de reserva lista (normalmente por WhatsApp) y busca el punto de encuentro acordado con la rentadora. El proceso de entrega suele tomar entre 10 y 20 minutos: revisión del vehículo, firma del contrato y pago del depósito. Después, ya puedes salir manejando directamente hacia tu hotel o tu primera parada.</p>
+    <h2>Tiempo Estimado y Consejos Prácticos</h2>
+    <p>Desde que aterrizas hasta que sales manejando, calcula entre 45 minutos y 1 hora considerando inmigración, equipaje y la entrega del auto. Para evitar imprevistos: confirma tu hora de llegada con la rentadora el día antes, ten tu licencia y pasaporte a mano, y lleva efectivo o tarjeta para el depósito de seguridad.</p>
+    <h2>Primeras Rutas Desde el Aeropuerto</h2>
+    <p>Desde PUJ, Bávaro y el centro turístico de Punta Cana están a solo 15–20 minutos en auto. Si tu vuelo llega temprano, aprovecha para hacer una parada en Playa Bávaro o Playa Macao antes de llegar a tu hotel. Si prefieres ir directo, la mayoría de los resorts están a menos de 30 minutos de la terminal.</p>
+    <h2>Consejo Final</h2>
+    <p>Reservar tu auto de alquiler antes de viajar —en lugar de buscar opciones al llegar— te garantiza mejor precio, disponibilidad y una salida sin filas desde el aeropuerto. Con el vehículo listo desde el primer momento, tu viaje a República Dominicana empieza con libertad total.</p>
+  `
+},
+{
+  cat:"Rutas y Viajes",
+  slug:"mejores-rutas-republica-dominicana",
+  t:"5 Mejores Rutas en Auto por República Dominicana (Itinerarios de un Día)",
+  desc:"Cinco itinerarios de road trip de un día desde Punta Cana, con tiempos de manejo estimados, paradas recomendadas y consejos para cada ruta.",
+  ex:"Itinerarios completos de un día para explorar República Dominicana en auto, con tiempos de manejo y paradas clave.",
+  icon:"🧭",
+  img:"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=75",
+  content:`
+    <p>Tener un auto de alquiler en Punta Cana abre la puerta a itinerarios de un día que simplemente no son posibles en tour organizado. Aquí tienes 5 rutas planificadas con tiempos de manejo reales, para que puedas elegir según cuánto tiempo tengas disponible.</p>
+    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=75" alt="Ruta en auto por carreteras de República Dominicana" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Ruta 1: Montaña Redonda y Miches (≈2h30 de manejo total)</h2>
+    <p>Sal temprano hacia Montaña Redonda (50 min desde Punta Cana) para disfrutar los columpios panorámicos con menos gente. Continúa hacia Miches (30 min más) para almorzar frente al mar en un ambiente local y auténtico. Regreso estimado a media tarde.</p>
+    <h2>Ruta 2: Cap Cana y Playa Juanillo (≈40 min de manejo total)</h2>
+    <p>La ruta más corta y relajada. Cap Cana está a solo 15–20 minutos de Punta Cana. Perfecta para una escapada de medio día: playas de aguas turquesas, marina de lujo y restaurantes frente al mar, ideal si solo tienes una tarde libre.</p>
+    <h2>Ruta 3: Santo Domingo, Ciudad Colonial (≈4h de manejo total ida y vuelta)</h2>
+    <p>Un día completo. Santo Domingo está a unas 2 horas de Punta Cana por autopista. Explora la Zona Colonial, declarada Patrimonio de la Humanidad, con su arquitectura del siglo XVI, la Catedral Primada de América y el Alcázar de Colón. Recomendado salir muy temprano y regresar antes del anochecer.</p>
+    <h2>Ruta 4: Altos de Chavón y Bayahibe (≈3h de manejo total)</h2>
+    <p>La Romana está a aproximadamente 1 hora de Punta Cana. Visita el pintoresco pueblo de artistas de Altos de Chavón, construido sobre el Río Chavón, y continúa hacia las playas cristalinas de Bayahibe, punto de partida hacia Isla Saona. Ideal para un día combinando cultura y playa.</p>
+    <h2>Ruta 5: Península de Samaná (≈5h de manejo total ida y vuelta)</h2>
+    <p>La ruta más larga pero también una de las más espectaculares, con el nuevo puente elevado que atraviesa Los Haitises. Samaná está a unas 2h30 de Punta Cana. Ideal para quienes se quedan varios días, con playas como Playa Rincón y, en temporada (enero a marzo), avistamiento de ballenas jorobadas.</p>
+    <h2>Cómo Elegir Tu Ruta</h2>
+    <p>Si solo tienes una tarde libre, elige Cap Cana. Si tienes un día completo, Montaña Redonda + Miches o Altos de Chavón + Bayahibe son perfectas. Reserva Santo Domingo o Samaná para cuando tengas un día entero sin otros planes, saliendo lo más temprano posible para aprovechar la luz del día.</p>
+  `
+},
+{
+  cat:"Consejos",
+  slug:"alquiler-auto-vs-taxi-punta-cana",
+  t:"Alquilar un Auto vs Tomar un Taxi en Punta Cana: ¿Qué Conviene Más?",
+  desc:"Comparamos alquilar un auto y tomar taxis en Punta Cana: costos, libertad de horarios, seguridad y en qué casos cada opción tiene más sentido.",
+  ex:"Comparación honesta entre alquilar un auto y usar taxis en Punta Cana: costo, libertad y seguridad.",
+  icon:"🚕",
+  img:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=700&q=75",
+  content:`
+    <p>Una de las primeras decisiones que enfrentan los viajeros en Punta Cana es cómo moverse: ¿alquilar un auto o depender de taxis? Ambas opciones funcionan, pero la mejor depende de tu itinerario, presupuesto y estilo de viaje. Aquí comparamos las dos con datos concretos.</p>
+    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=700&q=75" alt="Comparación alquiler de auto vs taxi en Punta Cana" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Costo</h2>
+    <p>Un auto económico en Punta Cana cuesta desde $40/día con seguro incluido. Un solo viaje en taxi desde el aeropuerto hasta Bávaro puede costar $30–40, y las tarifas dentro de la zona turística suelen ser altas y no siempre tienen taxímetro. Si planeas hacer más de dos o tres traslados durante tu estadía —o cualquier excursión fuera del resort— alquilar un auto casi siempre resulta más económico.</p>
+    <h2>Libertad de Horarios</h2>
+    <p>Con un auto propio puedes salir cuando quieras, quedarte más tiempo en una playa, cambiar de planes sobre la marcha o levantarte temprano para ver el amanecer en Montaña Redonda sin coordinar con nadie. Los taxis dependen de disponibilidad, especialmente en zonas menos turísticas, y a veces hay que esperar o negociar el regreso.</p>
+    <h2>Seguridad y Comodidad</h2>
+    <p>Las carreteras principales alrededor de Punta Cana están en buen estado y son fáciles de navegar con GPS. Manejar tu propio auto significa no depender de conductores desconocidos, controlar tu propio ritmo y llevar tu equipaje y compras sin restricciones. Para quienes no se sienten cómodos manejando en el extranjero, el taxi elimina esa preocupación, aunque a un costo mayor por trayecto.</p>
+    <h2>¿Cuándo Conviene un Taxi?</h2>
+    <p>Si tu viaje es muy corto (2–3 días) y planeas quedarte dentro del resort la mayor parte del tiempo, unos pocos traslados en taxi pueden ser más simples que alquilar un auto. También es una buena opción para una sola noche de salida a un restaurante o discoteca donde prefieras no manejar.</p>
+    <h2>Nuestra Recomendación</h2>
+    <p>Si tu plan incluye explorar más allá del resort —playas como Macao o Juanillo, pueblos como Bayahibe, o excursiones de un día a Santo Domingo o Samaná— alquilar un auto te da más libertad, mejor relación costo-beneficio y una experiencia mucho más completa de República Dominicana. Para estadías muy cortas y sin planes de explorar, el taxi puede ser suficiente.</p>
+  `
+}
 ],
 en:[
 {
@@ -1929,6 +2059,105 @@ en:[
     <p>Honestly, there's no "bad" season for the Dominican Republic. The island stays warm and tropical all year. The difference is mostly humidity, tourist volume, short rain periods and ocean conditions. If you want perfect postcard weather — choose winter. If you want better prices and fewer tourists — summer and early autumn can be excellent. With good planning, any season can become an amazing Caribbean vacation.</p>
   `
 }
+,
+{
+  cat:"Rental Guide",
+  slug:"how-to-rent-a-car-in-punta-cana",
+  t:"How to Rent a Car in Punta Cana: Complete Guide",
+  desc:"Everything you need to know to rent a car in Punta Cana: requirements, documents, insurance, deposit and tips for choosing the right vehicle.",
+  ex:"Requirements, insurance, deposit and practical tips for renting your car in Punta Cana without surprises.",
+  icon:"🚗",
+  img:"https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=75",
+  content:`
+    <p>Renting a car in Punta Cana is one of the best decisions you can make for your Dominican Republic trip. It gives you the freedom to explore hidden beaches, local towns and scenic routes without relying on organized tours or expensive taxis. If it's your first time, it's normal to have questions about the process. This guide covers everything you need to know.</p>
+    <img src="https://images.unsplash.com/photo-1600661653561-629509216228?w=700&q=75" alt="Car rental Punta Cana requirements and documents" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Requirements and Necessary Documents</h2>
+    <p>To rent a car in Punta Cana you'll typically need: a valid driver's license (your home country license is usually accepted), a passport or ID, a credit card or cash for the security deposit, and the minimum required age (generally 21, though some premium categories require 25). You don't need an international driving permit if your license is in Latin script.</p>
+    <h2>How the Booking Process Works</h2>
+    <p>Most local rental companies in Punta Cana, including Rica Car Rental, work in a simple and direct way through WhatsApp: you send your pick-up and drop-off dates, choose your preferred car category (economy, SUV, sedan or minivan), and get confirmation within minutes. There's no need to stand in long airport counters or lines — the car can be delivered straight to your hotel or resort.</p>
+    <h2>Types of Insurance Available</h2>
+    <p>Most rentals include basic CDW insurance (collision damage waiver) with a deductible that varies by vehicle category. There's also a Full Coverage option, which removes the deductible and offers total coverage, ideal if you plan to drive long distances or outside the city. Always check what your contract includes before signing.</p>
+    <h2>The Security Deposit</h2>
+    <p>Almost all rental companies require a refundable deposit (commonly between $200 and $300) held as a guarantee and returned at the end of the rental with no damage or delays. It can be paid in cash or by credit card. This deposit is separate from the daily rental cost.</p>
+    <h2>How to Choose the Right Car</h2>
+    <p>If you're traveling as a couple and staying close to the resort, an economy car is enough. If there are several of you or you plan to explore rural roads, an SUV offers more space and better handling. For larger groups or families, minivans are the most comfortable option. Also think about luggage: economy cars have limited trunk space.</p>
+    <h2>Final Tips</h2>
+    <p>Book a few days in advance, especially during high season (December to April). Check the car together with staff before receiving it and take photos of any existing damage. Keep the rental company's WhatsApp number handy in case you need assistance during your trip. With this preparation, renting a car in Punta Cana is fast, safe, and opens the door to experiencing the real Dominican Republic.</p>
+  `
+},
+{
+  cat:"Airport Guide",
+  slug:"punta-cana-airport-car-rental-guide",
+  t:"Punta Cana Airport (PUJ) Car Rental Guide: What to Do When You Land",
+  desc:"Complete guide to Punta Cana International Airport (PUJ): how the car rental area works, what to do when you land, and the best routes from the airport.",
+  ex:"Everything about PUJ airport: terminals, car rental logistics and the first steps when you arrive in Punta Cana.",
+  icon:"✈️",
+  img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75",
+  content:`
+    <p>Punta Cana International Airport (PUJ) is one of the busiest in the Caribbean, and for many travelers it's the first contact with the Dominican Republic. Understanding how the car rental area works saves you time and stress from the moment you land.</p>
+    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=75" alt="Punta Cana International Airport PUJ car rental" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>How PUJ Airport Is Organized</h2>
+    <p>PUJ has several terminals connected by open, palm-roofed walkways — a design very characteristic of Punta Cana. After going through immigration and customs, you'll find the exit area where transportation and car rental representatives wait.</p>
+    <h2>Airport Pickup vs. Off-Airport Delivery</h2>
+    <p>There are two main ways to rent a car at PUJ: picking it up directly at counters inside the airport, or coordinating with a local rental company to deliver the vehicle right at the exit, or even at your hotel. This second option, offered by companies like Rica Car Rental, is usually more affordable because it avoids the extra fees international companies charge for operating inside the terminal.</p>
+    <h2>What to Do When You Land</h2>
+    <p>Once you exit the baggage area, have your booking confirmation ready (usually via WhatsApp) and look for the agreed meeting point with your rental company. The handover process typically takes 10–20 minutes: vehicle inspection, contract signing, and deposit payment. After that, you can drive straight to your hotel or your first stop.</p>
+    <h2>Estimated Time and Practical Tips</h2>
+    <p>From landing to driving away, budget 45 minutes to 1 hour, accounting for immigration, baggage, and car handover. To avoid surprises: confirm your arrival time with the rental company the day before, keep your license and passport handy, and bring cash or a card for the security deposit.</p>
+    <h2>First Routes from the Airport</h2>
+    <p>From PUJ, Bávaro and the main Punta Cana tourist area are just 15–20 minutes away by car. If your flight lands early, take the chance to stop at Playa Bávaro or Playa Macao before heading to your hotel. If you prefer to go straight there, most resorts are within 30 minutes of the terminal.</p>
+    <h2>Final Tip</h2>
+    <p>Booking your rental car before you travel — rather than looking for options on arrival — guarantees better pricing, availability, and a hassle-free exit from the airport with no lines. With your vehicle ready from the first moment, your Dominican Republic trip starts with total freedom.</p>
+  `
+},
+{
+  cat:"Road Trips",
+  slug:"best-road-trips-dominican-republic",
+  t:"5 Best Road Trips in the Dominican Republic (Day-Trip Itineraries)",
+  desc:"Five day-trip itineraries from Punta Cana, with estimated driving times, recommended stops, and tips for each route.",
+  ex:"Complete day-trip itineraries to explore the Dominican Republic by car, with driving times and key stops.",
+  icon:"🧭",
+  img:"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=75",
+  content:`
+    <p>Having a rental car in Punta Cana opens the door to day-trip itineraries that simply aren't possible on an organized tour. Here are 5 planned routes with real driving times, so you can choose based on how much time you have available.</p>
+    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=75" alt="Road trip route through Dominican Republic highways" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Route 1: Montaña Redonda & Miches (≈2h30 total driving)</h2>
+    <p>Leave early for Montaña Redonda (50 min from Punta Cana) to enjoy the panoramic swings with fewer crowds. Continue to Miches (30 more minutes) for a seaside lunch in a local, authentic setting. Expect to be back by mid-afternoon.</p>
+    <h2>Route 2: Cap Cana & Playa Juanillo (≈40 min total driving)</h2>
+    <p>The shortest and most relaxed route. Cap Cana is just 15–20 minutes from Punta Cana. Perfect for a half-day escape: turquoise beaches, a luxury marina, and oceanfront restaurants — ideal if you only have a free afternoon.</p>
+    <h2>Route 3: Santo Domingo, Colonial Zone (≈4h round-trip driving)</h2>
+    <p>A full-day trip. Santo Domingo is about 2 hours from Punta Cana via highway. Explore the Colonial Zone, a UNESCO World Heritage Site, with its 16th-century architecture, the Primatial Cathedral of America, and the Alcázar de Colón. We recommend leaving very early and returning before dark.</p>
+    <h2>Route 4: Altos de Chavón & Bayahibe (≈3h total driving)</h2>
+    <p>La Romana is about 1 hour from Punta Cana. Visit the picturesque artists' village of Altos de Chavón, built over the Chavón River, then continue to the crystal-clear beaches of Bayahibe, the departure point for Saona Island. Ideal for a day combining culture and beach.</p>
+    <h2>Route 5: Samaná Peninsula (≈5h round-trip driving)</h2>
+    <p>The longest route, but also one of the most spectacular, with the new elevated highway crossing Los Haitises. Samaná is about 2h30 from Punta Cana. Ideal for travelers staying several days, with beaches like Playa Rincón and, in season (January to March), humpback whale watching.</p>
+    <h2>How to Choose Your Route</h2>
+    <p>If you only have a free afternoon, choose Cap Cana. If you have a full day, Montaña Redonda + Miches or Altos de Chavón + Bayahibe are perfect. Save Santo Domingo or Samaná for when you have an entire day free of other plans, leaving as early as possible to make the most of daylight.</p>
+  `
+},
+{
+  cat:"Tips",
+  slug:"car-rental-vs-taxi-punta-cana",
+  t:"Car Rental vs Taxi in Punta Cana: Which Is Better?",
+  desc:"We compare renting a car and taking taxis in Punta Cana: cost, schedule freedom, safety, and when each option makes more sense.",
+  ex:"An honest comparison between renting a car and using taxis in Punta Cana: cost, freedom and safety.",
+  icon:"🚕",
+  img:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=700&q=75",
+  content:`
+    <p>One of the first decisions travelers face in Punta Cana is how to get around: rent a car or rely on taxis? Both options work, but the best one depends on your itinerary, budget and travel style. Here we compare the two with concrete numbers.</p>
+    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=700&q=75" alt="Car rental versus taxi comparison in Punta Cana" style="width:100%;border-radius:8px;margin:20px 0"/>
+    <h2>Cost</h2>
+    <p>An economy car in Punta Cana starts at $40/day with insurance included. A single taxi ride from the airport to Bávaro can cost $30–40, and fares within the tourist zone tend to be high and don't always use a meter. If you plan on making more than two or three trips during your stay — or any excursion outside the resort — renting a car is almost always more economical.</p>
+    <h2>Schedule Freedom</h2>
+    <p>With your own car, you can leave whenever you want, stay longer at a beach, change plans on the go, or wake up early to catch the sunrise at Montaña Redonda without coordinating with anyone. Taxis depend on availability, especially in less touristy areas, and sometimes you have to wait or negotiate the return trip.</p>
+    <h2>Safety and Comfort</h2>
+    <p>The main roads around Punta Cana are in good condition and easy to navigate with GPS. Driving your own car means not depending on unfamiliar drivers, controlling your own pace, and carrying your luggage and purchases without restrictions. For those who aren't comfortable driving abroad, a taxi removes that concern, though at a higher cost per trip.</p>
+    <h2>When Is a Taxi Better?</h2>
+    <p>If your trip is very short (2–3 days) and you plan to stay mostly within the resort, a few taxi rides can be simpler than renting a car. It's also a good option for a single night out to a restaurant or club where you'd rather not drive.</p>
+    <h2>Our Recommendation</h2>
+    <p>If your plan includes exploring beyond the resort — beaches like Macao or Juanillo, towns like Bayahibe, or day trips to Santo Domingo or Samaná — renting a car gives you more freedom, better value for money, and a much fuller Dominican Republic experience. For very short stays with no plans to explore, a taxi may be enough.</p>
+  `
+}
 ]
 };
 
@@ -1972,15 +2201,10 @@ function openArticle(i){
   const article=BLOG_ARTICLES[lang][i];
   if(!article) return;
   const slug=article.slug;
-  const urlMap={
-    'mejores-lugares-punta-cana-en-auto':'/blog/mejores-lugares-punta-cana-en-auto',
-    'restaurantes-vida-nocturna-punta-cana':'/blog/restaurantes-vida-nocturna-punta-cana',
-    'santo-domingo-en-auto-desde-punta-cana':'/blog/santo-domingo-en-auto-desde-punta-cana',
-    'peninsula-samana-naturaleza-republica-dominicana':'/blog/peninsula-samana-naturaleza-republica-dominicana',
-    'puerto-plata-guia-costa-norte':'/blog/puerto-plata-guia-costa-norte',
-    'guia-completa-road-trip-republica-dominicana':'/blog/guia-completa-road-trip-republica-dominicana',
-    'mejor-epoca-visitar-republica-dominicana':'/blog/mejor-epoca-visitar-republica-dominicana'
-  };
+  // All ES + EN slugs route to their own /blog/<slug> page (each page has its own ES/EN toggle)
+  const allSlugs=[...BLOG_ARTICLES.es,...BLOG_ARTICLES.en].map(a=>a.slug);
+  const urlMap={};
+  allSlugs.forEach(s=>{urlMap[s]='/blog/'+s});
   if(urlMap[slug]){
     window.location.href=urlMap[slug];
     return;
@@ -2425,15 +2649,10 @@ init();
         // For blog page: add click handlers to article cards
         if (targetPage === 'blog') {
           setTimeout(function() {
-            var URLS = {
-              'mejores-lugares-punta-cana-en-auto': '/blog/mejores-lugares-punta-cana-en-auto',
-              'restaurantes-vida-nocturna-punta-cana': '/blog/restaurantes-vida-nocturna-punta-cana',
-              'santo-domingo-en-auto-desde-punta-cana': '/blog/santo-domingo-en-auto-desde-punta-cana',
-              'peninsula-samana-naturaleza-republica-dominicana': '/blog/peninsula-samana-naturaleza-republica-dominicana',
-              'puerto-plata-guia-costa-norte': '/blog/puerto-plata-guia-costa-norte',
-              'guia-completa-road-trip-republica-dominicana': '/blog/guia-completa-road-trip-republica-dominicana',
-              'mejor-epoca-visitar-republica-dominicana': '/blog/mejor-epoca-visitar-republica-dominicana'
-            };
+            var URLS = {};
+            [].concat(BLOG_ARTICLES.es, BLOG_ARTICLES.en).forEach(function(a){
+              URLS[a.slug] = '/blog/' + a.slug;
+            });
             document.querySelectorAll('[data-slug]').forEach(function(card) {
               var slug = card.getAttribute('data-slug');
               if (URLS[slug]) {
