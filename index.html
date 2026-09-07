@@ -953,6 +953,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </select>
           </div>
           <div class="fi">
+            <label class="fl" id="ml-time-pick">Hora de Recogida</label>
+            <select class="fc" id="m-time-pick">
+              <option>06:00</option><option>07:00</option><option>08:00</option><option>09:00</option>
+              <option>10:00</option><option>11:00</option><option selected>12:00</option><option>13:00</option>
+              <option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option>
+              <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+              <option>22:00</option>
+            </select>
+          </div>
+          <div class="fi">
+            <label class="fl" id="ml-time-drop">Hora de Devolución</label>
+            <select class="fc" id="m-time-drop">
+              <option>06:00</option><option>07:00</option><option>08:00</option><option>09:00</option>
+              <option>10:00</option><option>11:00</option><option selected>12:00</option><option>13:00</option>
+              <option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option>
+              <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+              <option>22:00</option>
+            </select>
+          </div>
+          <div class="fi">
             <label class="fl" id="ml-fname">Nombre</label>
             <input type="text" class="fc" id="m-fname" placeholder="Juan"/>
           </div>
@@ -1017,6 +1037,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="sum-row"><span class="sum-label" id="sum-dates-label">Fechas</span><span class="sum-val" id="sum-dates-val"></span></div>
           <div class="sum-row"><span class="sum-label" id="sum-loc-label">Recogida</span><span class="sum-val" id="sum-loc-val"></span></div>
           <div class="sum-row"><span class="sum-label" id="sum-base-label">Tarifa base</span><span class="sum-val" id="sum-base"></span></div>
+          <div class="sum-row" id="sum-discount-row" style="display:none"><span class="sum-label" id="sum-discount-label">Descuento por días</span><span class="sum-val" id="sum-discount-val"></span></div>
+          <div class="sum-row" id="sum-locfee-row" style="display:none"><span class="sum-label" id="sum-locfee-label">Cargo por ubicación</span><span class="sum-val" id="sum-locfee-val"></span></div>
+          <div class="sum-row" id="sum-timefee-row" style="display:none"><span class="sum-label" id="sum-timefee-label">Cargo por horario</span><span class="sum-val" id="sum-timefee-val"></span></div>
           <div class="sum-row" id="sum-extras-row" style="display:none"><span class="sum-label" id="sum-extras-label">Extras</span><span class="sum-val" id="sum-extras-val"></span></div>
           <div class="sum-row" id="sum-ins-row" style="display:none"><span class="sum-label" id="sum-ins-label">Seguro Full</span><span class="sum-val" id="sum-ins-val"></span></div>
           <div class="sum-divider"></div>
@@ -1130,6 +1153,7 @@ const T={
     insNote:"💡 El depósito de $300 aplica en ambos tipos de seguro y es reembolsable al finalizar el alquiler sin daños o retrasos. Para más información escríbenos por WhatsApp.",
     mSteps:["Fechas","Extras","Seguro","Pago"],
     mLocPick:"Lugar de Recogida",mLocDrop:"Lugar de Devolución",mFname:"Nombre",mLname:"Apellido",mPhone:"Teléfono / WhatsApp",
+    mTimePick:"Hora de Recogida",mTimeDrop:"Hora de Devolución",
     mExtras:"Opciones Adicionales",mIns:"Tipo de Seguro",
     extras:[
       {id:"child",icon:"🪑",name:"Silla Infantil",desc:"Para niños hasta 18kg",price:8},
@@ -1140,7 +1164,7 @@ const T={
       {id:"basic",name:"Básico CDW",desc:"Franquicia $800/$1000 · Depósito $300",price:0,label:"Incluido"},
       {id:"full",name:"Full Coverage",desc:"Sin franquicia · Cobertura total",price:"30%",label:"+30% precio base"},
     ],
-    sumDates:"Fechas",sumLoc:"Recogida",sumBase:"Tarifa base",sumExtras:"Extras",sumIns:"Seguro Full",sumTotal:"Total estimado",
+    sumDates:"Fechas",sumLoc:"Recogida",sumBase:"Tarifa base",sumDiscount:"Descuento por días",sumLocFee:"Cargo por ubicación",sumTimeFee:"Cargo por horario",sumExtras:"Extras",sumIns:"Seguro Full",sumTotal:"Total estimado",
     depNote:"Depósito de reserva: $50 USD (no incluido — se descuenta del pago final)",
     ppBtn:"— Reservar con $50 depósito",waBtn:"Reservar por WhatsApp",
     paySecure:"🔒 Pago seguro · Depósito reembolsable si no hay disponibilidad",
@@ -1195,6 +1219,7 @@ const T={
     insNote:"💡 The $300 deposit applies to both insurance types and is refundable at the end of the rental with no damage or delays. For more information contact us via WhatsApp.",
     mSteps:["Dates","Extras","Insurance","Payment"],
     mLocPick:"Pick-up Location",mLocDrop:"Drop-off Location",mFname:"First Name",mLname:"Last Name",mPhone:"Phone / WhatsApp",
+    mTimePick:"Pick-up Time",mTimeDrop:"Drop-off Time",
     mExtras:"Additional Options",mIns:"Insurance Type",
     extras:[
       {id:"child",icon:"🪑",name:"Child Seat",desc:"For children up to 18kg",price:8},
@@ -1205,7 +1230,7 @@ const T={
       {id:"basic",name:"Basic CDW",desc:"$800/$1000 deductible · $300 deposit",price:0,label:"Included"},
       {id:"full",name:"Full Coverage",desc:"Zero deductible · Full coverage",price:"30%",label:"+30% base price"},
     ],
-    sumDates:"Dates",sumLoc:"Pick-up",sumBase:"Base rate",sumExtras:"Extras",sumIns:"Full Insurance",sumTotal:"Estimated total",
+    sumDates:"Dates",sumLoc:"Pick-up",sumBase:"Base rate",sumDiscount:"Multi-day discount",sumLocFee:"Location fee",sumTimeFee:"Time fee",sumExtras:"Extras",sumIns:"Full Insurance",sumTotal:"Estimated total",
     depNote:"Reservation deposit: $50 USD (not included — deducted from final payment)",
     ppBtn:"— Reserve with $50 deposit",waBtn:"Reserve via WhatsApp",
     paySecure:"🔒 Secure payment · Refundable deposit if unavailable",
@@ -2452,6 +2477,8 @@ function openModal(carId){
   // labels
   document.getElementById('ml-loc-pick').textContent=t.mLocPick;
   document.getElementById('ml-loc-drop').textContent=t.mLocDrop;
+  document.getElementById('ml-time-pick').textContent=t.mTimePick;
+  document.getElementById('ml-time-drop').textContent=t.mTimeDrop;
   document.getElementById('ml-fname').textContent=t.mFname;
   document.getElementById('ml-lname').textContent=t.mLname;
   document.getElementById('ml-phone').textContent=t.mPhone;
@@ -2531,19 +2558,75 @@ function selInsurance(id){
   document.getElementById('iopt-'+id).classList.add('on');
 }
 
+// ── LOCATION FEES ────────────────────────────────────────────────────────────
+const LOC_FREE='Bávaro / Punta Cana';
+const LOC_PUJ='Aeropuerto PUJ';
+const LOC_STO='Aeropuerto Sto. Domingo';
+const LOC_60=['Bayahibe','La Romana','Aeropuerto La Romana']; // $60 one leg / $100 both legs same place
+
+function calcLocationFee(pickup,dropoff){
+  if(!pickup||!dropoff)return 0;
+  const crossSet=[LOC_FREE,LOC_PUJ];
+  // Relocation between the Bávaro/PUJ zone and Santo Domingo airport: flat $100
+  if((crossSet.includes(pickup)&&dropoff===LOC_STO)||(crossSet.includes(dropoff)&&pickup===LOC_STO)){
+    return 100;
+  }
+  let fee=0;
+  if(pickup===LOC_PUJ||dropoff===LOC_PUJ)fee+=20;
+  LOC_60.forEach(loc=>{
+    if(pickup===loc&&dropoff===loc)fee+=100;
+    else if(pickup===loc||dropoff===loc)fee+=60;
+  });
+  return fee;
+}
+
+// ── TIME FEE / EXTRA DAY ─────────────────────────────────────────────────────
+function timeToHours(t){
+  if(!t)return null;
+  const[h,m]=t.split(':').map(Number);
+  return h+(m||0)/60;
+}
+function calcTimeAdjustment(pickTime,dropTime){
+  // returns {extraDays, hourlyFee}
+  const ph=timeToHours(pickTime), dh=timeToHours(dropTime);
+  if(ph===null||dh===null||ph===dh)return{extraDays:0,hourlyFee:0};
+  const diff=Math.abs(dh-ph);
+  if(diff>4)return{extraDays:1,hourlyFee:0};
+  return{extraDays:0,hourlyFee:Math.ceil(diff)*7};
+}
+
+// ── MULTI-DAY DISCOUNT ───────────────────────────────────────────────────────
+function calcDiscountRate(days){
+  if(days>=21)return .30;
+  if(days>=14)return .20;
+  if(days>=7)return .10;
+  return 0;
+}
+
 function calcTotal(){
-  if(!selCar||!calStart||!calEnd)return{days:0,base:0,extras:0,ins:0,total:0};
-  const days=diffDays(calStart,calEnd);
-  const base=selCar.price*days;
+  if(!selCar||!calStart||!calEnd)return{days:0,base:0,discount:0,locFee:0,timeFee:0,extras:0,ins:0,total:0};
+  let days=diffDays(calStart,calEnd);
+  const pickTime=document.getElementById('m-time-pick')?document.getElementById('m-time-pick').value:null;
+  const dropTime=document.getElementById('m-time-drop')?document.getElementById('m-time-drop').value:null;
+  const timeAdj=calcTimeAdjustment(pickTime,dropTime);
+  days+=timeAdj.extraDays;
+  const discountRate=calcDiscountRate(days);
+  const rawBase=selCar.price*days;
+  const discount=Math.round(rawBase*discountRate);
+  const base=rawBase-discount;
+  const pickup=document.getElementById('m-loc-pick')?document.getElementById('m-loc-pick').value:null;
+  const dropoff=document.getElementById('m-loc-drop')?document.getElementById('m-loc-drop').value:null;
+  const locFee=calcLocationFee(pickup,dropoff);
+  const timeFee=timeAdj.hourlyFee;
   const t=T[lang];
   const ep=selExtras.reduce((s,id)=>s+(t.extras.find(e=>e.id===id)?.price||0),0)*days;
   const ip=selIns==='full'?Math.round(selCar.price*.3)*days:0;
-  return{days,base,extras:ep,ins:ip,total:base+ep+ip};
+  return{days,base,discount,locFee,timeFee,extras:ep,ins:ip,total:base+locFee+timeFee+ep+ip};
 }
 
 function renderSummary(){
   const t=T[lang];
-  const {days,base,extras,ins,total}=calcTotal();
+  const {days,base,discount,locFee,timeFee,extras,ins,total}=calcTotal();
   document.getElementById('sum-emoji').textContent=selCar.emoji;
   document.getElementById('sum-car-name').textContent=selCar.name;
   document.getElementById('sum-car-var').textContent=selCar.var;
@@ -2552,7 +2635,19 @@ function renderSummary(){
   document.getElementById('sum-loc-label').textContent=t.sumLoc;
   document.getElementById('sum-loc-val').textContent=document.getElementById('m-loc-pick').value;
   document.getElementById('sum-base-label').textContent=t.sumBase+' ('+days+' '+t.days+')';
-  document.getElementById('sum-base').textContent='$'+base;
+  document.getElementById('sum-base').textContent='$'+(base+discount);
+  const dr=document.getElementById('sum-discount-row');
+  if(dr){dr.style.display=discount>0?'flex':'none';
+    document.getElementById('sum-discount-label').textContent=t.sumDiscount;
+    document.getElementById('sum-discount-val').textContent='-$'+discount;}
+  const lr=document.getElementById('sum-locfee-row');
+  if(lr){lr.style.display=locFee>0?'flex':'none';
+    document.getElementById('sum-locfee-label').textContent=t.sumLocFee;
+    document.getElementById('sum-locfee-val').textContent='$'+locFee;}
+  const tr=document.getElementById('sum-timefee-row');
+  if(tr){tr.style.display=timeFee>0?'flex':'none';
+    document.getElementById('sum-timefee-label').textContent=t.sumTimeFee;
+    document.getElementById('sum-timefee-val').textContent='$'+timeFee;}
   const er=document.getElementById('sum-extras-row');
   er.style.display=extras>0?'flex':'none';
   document.getElementById('sum-extras-label').textContent=t.sumExtras;
@@ -2585,9 +2680,12 @@ function bookWhatsApp(){
   const country=document.getElementById('m-country').value;
   const phone=country+' '+document.getElementById('m-phone').value;
   const loc=document.getElementById('m-loc-pick').value;
+  const locDrop=document.getElementById('m-loc-drop').value;
+  const timePick=document.getElementById('m-time-pick').value;
+  const timeDrop=document.getElementById('m-time-drop').value;
   const msg=lang==='es'
-    ?`Hola Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Recogida: ${loc}\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} días)\n👤 ${fname}\n📞 ${phone}\n🛡️ Seguro: ${ins}\n➕ Extras: ${extras}\n💰 Total estimado: $${total}\n\n¿Tienen disponibilidad?`
-    :`Hi Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Pick-up: ${loc}\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} days)\n👤 ${fname}\n📞 ${phone}\n🛡️ Insurance: ${ins}\n➕ Extras: ${extras}\n💰 Estimated total: $${total}\n\nDo you have availability?`;
+    ?`Hola Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Recogida: ${loc} (${timePick})\n📍 Devolución: ${locDrop} (${timeDrop})\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} días)\n👤 ${fname}\n📞 ${phone}\n🛡️ Seguro: ${ins}\n➕ Extras: ${extras}\n💰 Total estimado: $${total}\n\n¿Tienen disponibilidad?`
+    :`Hi Rica Car Rental! 👋\n\n🚗 *${selCar.name}*\n📍 Pick-up: ${loc} (${timePick})\n📍 Drop-off: ${locDrop} (${timeDrop})\n📅 ${dateStr(calStart)} → ${dateStr(calEnd)} (${days} days)\n👤 ${fname}\n📞 ${phone}\n🛡️ Insurance: ${ins}\n➕ Extras: ${extras}\n💰 Estimated total: $${total}\n\nDo you have availability?`;
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({event: 'booking_whatsapp_click'});
   window.open('https://wa.me/18493436895?text='+encodeURIComponent(msg),'_blank');
